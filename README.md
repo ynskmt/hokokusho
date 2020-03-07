@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# hokokusho DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+### Association
+- has_many :messages
+- has_many :students_users
+- has_many :students,  through:  :students_users
 
-Things you may want to cover:
+## studentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|subject|string|null: false|
 
-* Ruby version
+### Association
+- has_many :messages
+- has_many :students_users
+- has_many :users,  through:  :students_users
 
-* System dependencies
+## students_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|student_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :student
+- belongs_to :user
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|image|string||
+|student_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :student

@@ -1,0 +1,9 @@
+.header
+  .header__logo
+    マイページ
+  .header__logout
+    = link_to destroy_user_session_path, method: :delete do
+      ログアウト
+  .header__student
+    = link_to new_student_path do
+      新規生徒作成

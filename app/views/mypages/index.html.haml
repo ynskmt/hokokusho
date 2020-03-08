@@ -3,7 +3,7 @@
   = current_user.last_name + "でログイン中"
   %br/
   - current_user.students.each do |student|
-    = link_to "#" do
+    = link_to reports_path do
       = student.name
       = student.school.name
       = student.grade.name

@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_075249) do
+ActiveRecord::Schema.define(version: 2020_03_08_100529) do
+
+  create_table "reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "day", null: false
+    t.string "unit", null: false
+    t.integer "homework_rate", null: false
+    t.string "homework", null: false
+    t.text "content", null: false
+    t.string "teacher", null: false
+    t.bigint "student_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_reports_on_student_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
 
   create_table "student_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "student_id"
@@ -45,6 +62,8 @@ ActiveRecord::Schema.define(version: 2020_03_08_075249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reports", "students"
+  add_foreign_key "reports", "users"
   add_foreign_key "student_users", "students"
   add_foreign_key "student_users", "users"
 end

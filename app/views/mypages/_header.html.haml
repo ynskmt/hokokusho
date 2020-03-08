@@ -1,0 +1,6 @@
+.header
+  .header__logo
+    マイページ
+  .header__logout
+    = link_to destroy_user_session_path, method: :delete do
+      ログアウト

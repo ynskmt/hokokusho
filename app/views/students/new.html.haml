@@ -1,0 +1,19 @@
+.student-wrapper
+  =form_for @student do |f|
+    = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
+
+    .field-label
+      = f.label :school_id
+    .field-input
+      = f.collection_select :school_id, School.all , :id, :name, {prompt: '---'}, class: 'form'
+    .field-label
+      = f.label :grade_id
+    .field-input
+      = f.collection_select :grade_id, Grade.all , :id, :name, {prompt: '---'}, class: 'form'
+    .field-label
+      = f.label :subject_id
+    .field-input
+      = f.collection_select :subject_id, Subject.all , :id, :name, {prompt: '---'}, class: 'form'
+    
+    = f.collection_check_boxes :user_ids, User.all, :id, :last_name
+    = f.submit "Save", class: "chat-group-form__action-btn"

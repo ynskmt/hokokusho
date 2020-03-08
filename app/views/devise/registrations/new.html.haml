@@ -1,21 +1,38 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.signup-wrapper
+  .signup-main
+    .signup-main__container
+      .signup-main__container__top
+        新規登録
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .field
+          .field-label
+            = f.label :last_name
+          .field-input
+            = f.text_field :last_name
+        .field
+          .field-label
+            = f.label :first_name
+          .field-input
+            = f.text_field :first_name
+        .field
+          .field-label
+            = f.label :email
+          .field-input
+            = f.email_field :email
+        .field
+          .field-label
+            = f.label :password
+            %i (英数字8文字以上)
+          .field-input
+            = f.password_field :password, autocomplete: "off"
+        .field
+          .field-label
+            = f.label :password_confirmation
+          .field-input
+            = f.password_field :password_confirmation, autocomplete: "off"
+        .field-label
+          = f.label :user_status_id
+        .field-input
+          = f.collection_select :user_status_id, UserStatus.all , :id, :name, {prompt: '---'}, class: 'form'
+        .actions
+          = f.submit "Create Account", class: 'btn'

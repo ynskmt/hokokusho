@@ -1,0 +1,23 @@
+.report-wrapper
+  = form_for [@student, @report] do |f|
+    日付
+    = f.text_field :year
+    = f.text_field :month
+    = f.text_field :day
+    %br
+    単元
+    = f.text_field :unit
+    %br
+    宿題実施率
+    = f.select :homework_rate, [*0..100], prompt: "--"
+    %br
+    宿題
+    = f.text_field :homework
+    %br
+    内容
+    = f.text_area :content
+    %br
+    担当
+    = f.text_field :teacher
+    %br
+    = f.submit

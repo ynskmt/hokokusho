@@ -1,19 +1,34 @@
 .report-wrapper
   = render "create-report-btn"
-  .report-wrapper__main
-    .report-wrapper__main__box
+  .report-main
+    .report-main__container
       - @reports.each do |report|
-        .report-wrapper__main__box__date
-          = "#{report.year}年"
-          = "#{report.month}月"
-          = "#{report.day}日"
-        .report-wrapper__main__box__unit
-          = report.unit
-        .report-wrapper__main__box__homework-rate
-          = report.homework_rate
-        .report-wrapper__main__box__content
-          = report.content
-        .report-wrapper__main__box__homework
-          = report.homework
+        .report-main__container__box
+          .report-main__container__box__left
+            .report-main__container__box__left__date
+              = "#{report.year}年"
+              = "#{report.month}月"
+              = "#{report.day}日"
+            .report-main__container__box__left__unit
+              .report-main__container__box__left__unit__name
+                単元名：
+              .report-main__container__box__left__unit__text
+                = report.unit
+            .report-main__container__box__left__homework-rate
+              .report-main__container__box__left__homework-rate__name
+                宿題実施率：
+              .report-main__container__box__left__homework-rate__text
+                = "#{report.homework_rate}%"
+            .report-main__container__box__left__content
+              .report-main__container__box__left__content__name
+                本日の内容
+              .report-main__container__box__left__content__text
+                = report.content
+          .report-main__container__box__right
+            .report-main__container__box__right__homework
+              .report-main__container__box__right__homework__name
+                宿題
+              .report-main__container__box__right__homework__text
+                = report.homework
 
   

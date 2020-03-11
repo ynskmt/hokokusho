@@ -1,0 +1,29 @@
+.footer {
+  height: 180px;
+  width: 1440px;
+  background-color: #eee;
+  &__box {
+    width: 500px;
+    height: 180px;
+    margin: 0 auto;
+    padding: 70px 0 40px;
+    &__info {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        height: 20px;
+        width: 500px;
+        font-size: 18px;
+        li {
+          width: 100px;
+          text-align: center;
+        }
+      }
+    }
+    &__text {
+      text-align: center;
+      font-size: 14px;
+      margin: 20px 0 0;
+    }
+  }
+}

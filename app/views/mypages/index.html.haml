@@ -1,7 +1,5 @@
 .mypage-wrapper
   = render "header"
-  = current_user.last_name + "でログイン中"
-  %br/
   - current_user.students.each do |student|
     = link_to student_reports_path(student) do
       = student.name

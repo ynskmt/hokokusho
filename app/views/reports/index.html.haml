@@ -1,2 +1,19 @@
 .report-wrapper
   = render "create-report-btn"
+  .report-wrapper__main
+    .report-wrapper__main__box
+      - @reports.each do |report|
+        .report-wrapper__main__box__date
+          = "#{report.year}年"
+          = "#{report.month}月"
+          = "#{report.day}日"
+        .report-wrapper__main__box__unit
+          = report.unit
+        .report-wrapper__main__box__homework-rate
+          = report.homework_rate
+        .report-wrapper__main__box__content
+          = report.content
+        .report-wrapper__main__box__homework
+          = report.homework
+
+  

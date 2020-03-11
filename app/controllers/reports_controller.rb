@@ -1,6 +1,7 @@
 class ReportsController < ApplicationController
   def index
     @student = Student.find(params[:student_id])
+    @reports = @student.reports.includes(:user)
   end
 
   def new

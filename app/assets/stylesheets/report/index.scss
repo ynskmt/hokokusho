@@ -1,0 +1,70 @@
+.report-wrapper {
+  padding: 10px;
+  background-color: #ffa500;
+}
+
+.report-main {
+  padding: 10px;
+  background-color: #eee;
+  &__container {
+    &__box {
+      margin: 10px;
+      padding: 10px;
+      background-color: #fff;
+      display: flex;
+      &__left {
+        width: 75%;
+        height: 300px;
+        &__date {
+          border: 1px solid black;
+          width: 150px;
+          height: 30px;
+          line-height: 30px;
+          padding: 3px;
+          text-align: center;
+
+        }
+        &__unit {
+          display: flex;
+          border: 1px solid black;
+          padding: 3px;
+          height: 40px;
+          line-height: 40px;
+          &__name {
+
+          }
+          &__text {
+            font-size: 20px;
+          }
+        }
+        &__homework-rate {
+          display: flex;
+          border: 1px solid black;
+          padding: 3px;
+        }
+        &__content {
+          border: 1px solid black;
+          padding: 3px;
+          &__name {
+            font-size: 12px;
+          }
+          &__text {
+            padding-top: 5px;
+            font-size: 14px;
+            height: 150px;
+          }
+        }
+      }
+      &__right {
+        width: 20%;
+        height: 300px;
+        &__homework {
+          border: 1px solid black;
+          height: 300px;
+
+
+        }
+      }
+    }
+  }
+}

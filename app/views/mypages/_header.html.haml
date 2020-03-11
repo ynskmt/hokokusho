@@ -1,9 +1,14 @@
 .header
   .header__logo
-    マイページ
-  .header__logout
-    = link_to destroy_user_session_path, method: :delete do
-      ログアウト
-  .header__student
-    = link_to new_student_path do
-      新規生徒作成
+    = link_to root_path do
+      = image_tag "hokokusho.png", width: "200px", height: "60px"
+  .header__bottom
+    .header__bottom__user
+      = current_user.last_name + current_user.first_name + "でログイン中"
+    - if current_user.user_status_id == "3"
+      .header__bottom__student
+        = link_to new_student_path do
+          新規生徒作成
+    .header__bottom__logout
+      = link_to destroy_user_session_path, method: :delete do
+        ログアウト

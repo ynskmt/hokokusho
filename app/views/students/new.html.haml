@@ -15,5 +15,7 @@
     .field-input
       = f.collection_select :subject_id, Subject.all , :id, :name, {prompt: '---'}, class: 'form'
     
-    = f.collection_check_boxes :user_ids, User.all, :id, :last_name
+    = f.collection_check_boxes :user_ids, User.all, :id, :last_name do |user|
+      = user.object.last_name
+      = user.object.first_name
     = f.submit "Save", class: "chat-group-form__action-btn"

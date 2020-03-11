@@ -1,0 +1,26 @@
+.header {
+  height: 150px;
+  &__logo {
+    padding: 10px;
+    text-align: center;
+    background-color: #eee;
+  }
+  &__bottom {
+    display: flex;
+    padding: 10px 0 10px;
+    background-color: #f0e68e;
+    &__user {
+      width: 33%;
+      text-align: center;
+    }
+    &__student {
+      width: 33%;
+      text-align: center;
+    }
+    &__logout {
+      width: 33%;
+      text-align: center;
+    }
+    
+  }
+}

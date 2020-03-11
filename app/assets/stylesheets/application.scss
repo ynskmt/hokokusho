@@ -1,4 +1,11 @@
 @import "./reset";
 
+@import "mypage/header";
+
 @import "report/create-report-btn";
 @import "report/index";
+
+
+* {
+  box-sizing: border-box;
+}

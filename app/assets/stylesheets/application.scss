@@ -2,6 +2,7 @@
 
 @import "mypage/header";
 @import "mypage/footer";
+@import "mypage/index";
 
 @import "report/create-report-btn";
 @import "report/index";
@@ -9,4 +10,9 @@
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

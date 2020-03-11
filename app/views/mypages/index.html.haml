@@ -1,9 +1,51 @@
 .mypage-wrapper
   = render "header"
-  - current_user.students.each do |student|
-    = link_to student_reports_path(student) do
-      = student.name
-      = student.school.name
-      = student.grade.name
-      = student.subject.name
+  .mypage-main
+    - if current_user.user_status_id == "1"
+      - current_user.students.each do |student|
+        = link_to student_reports_path(student) do
+          = student.name
+          = student.school.name
+          = student.grade.name
+          = student.subject.name
+    - else
+      .mypage-main__elementary-school
+        小学生
+        .student-container
+          - current_user.students.each do |student|
+            - if student.school.id == 1
+              .student-container__box
+                = link_to student_reports_path(student) do
+                  .student-box__name
+                    = student.name
+                  .student-box__school-grade
+                    = "#{student.school.name}#{student.grade.name}年"
+                  .student-box__subject
+                    = student.subject.name      
+      .mypage-main__junior-high-school
+        中学生
+        .student-container
+          - current_user.students.each do |student|
+            - if student.school.id == 2
+              .student-container__box
+                = link_to student_reports_path(student) do
+                  .student-box__name
+                    = student.name
+                  .student-box__school-grade
+                    = "#{student.school.name}#{student.grade.name}年"
+                  .student-box__subject
+                    = student.subject.name
+      .mypage-main__high-school
+        高校生
+        .student-container
+          - current_user.students.each do |student|
+            - if student.school.id == 3
+              .student-container__box
+                = link_to student_reports_path(student) do
+                  .student-box__name
+                    = student.name
+                  .student-box__school-grade
+                    = "#{student.school.name}#{student.grade.name}年"
+                  .student-box__subject
+                    = student.subject.name
   = render "footer"

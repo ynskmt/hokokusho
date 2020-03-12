@@ -55,10 +55,11 @@
             .report-main__container__right__first__homework
               = simple_format(report.homework)
           .report-main__container__right__second
-            .report-main__container__right__second__name
-              次回授業
             .report-main__container__right__second__next-class
-              = report.next_class
+              .report-main__container__right__second__next-class__name
+                次回授業
+              .report-main__container__right__second__next-class__date
+                = report.next_class
             .report-main__container__right__second__btn
               .report-main__container__right__second__btn__edit
                 = link_to edit_student_report_path(@student, report) do

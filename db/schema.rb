@@ -17,10 +17,14 @@ ActiveRecord::Schema.define(version: 2020_03_08_100529) do
     t.integer "month", null: false
     t.integer "day", null: false
     t.string "unit", null: false
-    t.integer "homework_rate", null: false
-    t.string "homework", null: false
+    t.string "homework_rate", null: false
+    t.string "mini_test"
+    t.integer "mini_test_rate"
     t.text "content", null: false
     t.string "teacher", null: false
+    t.string "confirmation", null: false
+    t.text "homework", null: false
+    t.date "next_class", null: false
     t.bigint "student_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false

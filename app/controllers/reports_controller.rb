@@ -20,6 +20,19 @@ class ReportsController < ApplicationController
   end
 
   def report_params
-    params.require(:report).permit(:year, :month, :day, :unit, :homework_rate, :homework, :content, :teacher).merge(user_id: current_user.id)
+    params.require(:report).permit(
+      :year,
+      :month,
+      :day,
+      :unit,
+      :homework_rate,
+      :mini_test,
+      :mini_test_rate,
+      :content,
+      :teacher,
+      :confirmation,
+      :homework,
+      :next_class,
+    ).merge(user_id: current_user.id)
   end
 end

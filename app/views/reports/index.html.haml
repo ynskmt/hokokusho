@@ -59,5 +59,12 @@
               次回授業
             .report-main__container__right__second__next-class
               = report.next_class
+            .report-main__container__right__second__btn
+              .report-main__container__right__second__btn__edit
+                = link_to edit_student_report_path(@student, report) do
+                  編集
+              .report-main__container__right__second__btn__delete
+                = link_to "#" do
+                  削除
       
   = render "mypages/footer"

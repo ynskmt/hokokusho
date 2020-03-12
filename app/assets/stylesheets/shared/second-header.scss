@@ -1,8 +1,9 @@
 .second-header {
   padding: 5px;
   height: 60px;
-  background-color: deepskyblue;
+  background-color: rgb(10, 37, 95);
   &__box {
+    color: #fff;
     display: flex;
     justify-content: center;
     &__name {

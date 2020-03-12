@@ -3,34 +3,61 @@
   = render 'shared/second-header'
   = render "create-report-btn"
   .report-main
-    .report-main__container
-      - @reports.each do |report|
-        .report-main__container__box
-          .report-main__container__box__left
-            .report-main__container__box__left__date
-              = "#{report.year}年"
-              = "#{report.month}月"
-              = "#{report.day}日"
-            .report-main__container__box__left__unit
-              .report-main__container__box__left__unit__name
-                単元名：
-              .report-main__container__box__left__unit__text
-                = report.unit
-            .report-main__container__box__left__homework-rate
-              .report-main__container__box__left__homework-rate__name
-                宿題実施率：
-              .report-main__container__box__left__homework-rate__text
-                = "#{report.homework_rate}%"
-            .report-main__container__box__left__content
-              .report-main__container__box__left__content__name
-                本日の内容
-              .report-main__container__box__left__content__text
-                = report.content
-          .report-main__container__box__right
-            .report-main__container__box__right__homework
-              .report-main__container__box__right__homework__name
-                宿題
-              .report-main__container__box__right__homework__text
-                = simple_format(report.homework)
+    - @reports.each do |report|
+      .report-main__container
 
-  
+        .report-main__container__left
+          .report-main__container__left__first
+            .report-main__container__left__first__date
+              .report-main__container__left__first__date__ymd
+                = "#{report.year}年"
+              .report-main__container__left__first__date__ymd
+                = "#{report.month}月"
+              .report-main__container__left__first__date__ymd
+                = "#{report.day}日"
+            .report-main__container__left__first__teacher
+              担当：
+              .report-main__container__left__first__teacher__name
+                = report.teacher
+            .report-main__container__left__first__confirmation
+              確認：
+              .report-main__container__left__first__confirmation__name
+                = report.confirmation
+          .report-main__container__left__second
+            .report-main__container__left__second__unit-name
+              単元名：
+            .report-main__container__left__second__unit-field
+              = report.unit
+          .report-main__container__left__third
+            .report-main__container__left__third__homework-rate
+              宿題実施率：
+              .report-main__container__left__third__homework-rate__text
+                = "#{report.homework_rate}%"
+            .report-main__container__left__third__mini_test
+              .report-main__container__left__third__mini_test__name
+                小テスト：
+                .report-main__container__left__third__mini_test__name__text
+                  = report.mini_test
+              .report-main__container__left__third__mini_test__rate
+                正答率：
+                .report-main__container__left__third__mini_test__rate__text
+                  = "#{report.mini_test_rate}%"
+          .report-main__container__left__fourth
+            .report-main__container__left__fourth__name
+              本日の内容
+            .report-main__container__left__fourth__content
+              = report.content
+
+        .report-main__container__right
+          .report-main__container__right__first
+            .report-main__container__right__first__name
+              宿題
+            .report-main__container__right__first__homework
+              = simple_format(report.homework)
+          .report-main__container__right__second
+            .report-main__container__right__second__name
+              次回授業
+            .report-main__container__right__second__next-class
+              = report.next_class
+      
+  = render "mypages/footer"

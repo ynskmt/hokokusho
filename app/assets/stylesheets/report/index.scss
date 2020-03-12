@@ -128,12 +128,38 @@
       &__second {
         margin-top: 10px;
         height: 20%;
-        &__name {
-          font-size: 20px;
-          margin-bottom: 3px;
-        }
+        display: flex;
         &__next-class {
- 
+          margin-right: 30px;
+          &__name {
+            font-size: 20px;
+            margin-bottom: 3px;
+          }
+          &__date {
+            
+          }
+        }
+        &__btn {
+          display: flex;
+          &__edit, &__delete {
+            a {
+              background: #aaa;
+              border: 1px solid #aaa;
+              color: #fff;
+              display: block;
+              line-height: 48px;
+              font-size: 20px;
+              border: 1px solid transparent;
+              cursor: pointer;
+              text-align: center;
+              width: 80px;
+              margin-right: 20px;
+            }
+          }
+          &__delete {
+            font-size: 20px;
+            height: 30px;
+          }
         }
       }
     }

@@ -19,6 +19,21 @@ class ReportsController < ApplicationController
     end
   end
 
+  def edit
+    @report = Report.find(params[:id])
+    @student = Student.find(params[:student_id])
+  end
+
+  def update
+    @student = Student.find(params[:student_id])
+    @report = @student.reports.find(params[:id])
+    if @report.update(report_params)
+      redirect_to student_reports_path(@student)
+    else
+      render :index
+    end
+  end
+
   def report_params
     params.require(:report).permit(
       :year,

@@ -1,0 +1,16 @@
+.second-header {
+  padding: 5px;
+  height: 60px;
+  background-color: deepskyblue;
+  &__box {
+    display: flex;
+    justify-content: center;
+    &__name {
+      margin-right: 100px;
+      font-size: 30px;
+    }
+    &__subject {
+      font-size: 30px;
+    }
+  }
+}

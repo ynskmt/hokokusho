@@ -19,6 +19,13 @@ class ReportsController < ApplicationController
     end
   end
 
+  def edit
+  
+  end
+
+  def update
+  end
+
   def report_params
     params.require(:report).permit(
       :year,

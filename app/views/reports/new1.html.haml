@@ -1,0 +1,64 @@
+.new-report-wrapper
+  = render 'shared/header-simple'
+  .new-report__main
+    = form_for [@student, @report] do |f|
+      .new-report-main__container__box
+        .new-report-main__container__box__left
+          .new-report-main__container__box__left__date
+            .new-report-main__container__box__left__date__year
+              = f.select :year, [*2021..2021], prompt: "2020"
+              %span 年
+            .new-report-main__container__box__left__date__month
+              = f.select :month, [*1..12], prompt: "--"
+              %span 月
+            .new-report-main__container__box__left__date__day
+              = f.select :day, [*1..31], prompt: "--"
+              %span 日
+          .new-report-main__container__box__left__unit
+            .new-report-main__container__box__left__unit__name
+              単元名：
+            .new-report-main__container__box__left__unit__text
+              = f.text_field :unit, class: 'unit'
+          .new-report-main__container__box__left__homework-rate
+            .new-report-main__container__box__left__homework-rate__name
+              宿題実施率：
+            .new-report-main__container__box__left__homework-rate__text
+              = f.select :homework_rate, [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100], prompt: "--"
+              %span %
+          .new-report-main__container__box__left__content
+            .new-report-main__container__box__left__content__name
+              本日の内容
+            .new-report-main__container__box__left__content__text
+              = f.text_area :content, class: 'content'
+          .new-report-main__container__box__left__teacher
+            = f.text_field :teacher, value: current_user.last_name
+        .new-report-main__container__box__right
+          .new-report-main__container__box__right__homework
+            .new-report-main__container__box__right__homework__name
+              宿題
+            .new-report-main__container__box__right__homework__text
+              = f.text_area :homework, class: 'homework', value: "/\n /\n /\n /\n /\n /"
+        = f.submit
+
+
+-# 日付
+-# = f.text_field :year
+-# = f.text_field :month
+-# = f.text_field :day
+-# %br
+-# 単元
+-# = f.text_field :unit
+-# %br
+-# 宿題実施率
+-# = f.select :homework_rate, [*0..100], prompt: "--"
+-# %br
+-# 宿題
+-# = f.text_field :homework
+-# %br
+-# 内容
+-# = f.text_area :content
+-# %br
+-# 担当
+-# = f.text_field :teacher
+-# %br
+-# = f.submit

@@ -1,0 +1,65 @@
+.new-report-wrapper
+  = render 'shared/header-simple'
+  = render 'shared/second-header'
+  .new-report-main
+    = form_for [@student, @report] do |f|
+      .new-report-main__container
+
+        .new-report-main__container__left
+          .new-report-main__container__left__first
+            .new-report-main__container__left__first__date
+              .new-report-main__container__left__first__date__ymd
+                = f.select :year, [*2020..2021], prompt: "--"
+                %span 年
+              .new-report-main__container__left__first__date__ymd
+                = f.select :month, [*1..12], prompt: "--"
+                %span 月
+              .new-report-main__container__left__first__date__ymd
+                = f.select :day, [*1..31], prompt: "--"
+                %span 日
+            .new-report-main__container__left__first__teacher
+              担当
+              .new-report-main__container__left__first__teacher__name
+                = f.text_field :teacher, value: current_user.last_name
+            .new-report-main__container__left__first__confirmation
+              確認
+              .new-report-main__container__left__first__confirmation__name
+                = f.text_field :confirmation
+          .new-report-main__container__left__second
+            .new-report-main__container__left__second__unit-name
+              単元名：
+            .new-report-main__container__left__second__unit-field
+              = f.text_field :unit, class: 'unit'
+          .new-report-main__container__left__third
+            .new-report-main__container__left__third__homework-rate
+              宿題実施率
+              .new-report-main__container__left__third__homework-rate__text
+                = f.select :homework_rate, [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100], prompt: "--"
+                %span %
+            .new-report-main__container__left__third__mini_test
+              .new-report-main__container__left__third__mini_test__name
+                小テスト
+                .new-report-main__container__left__third__mini_test__name__text
+                  = f.text_field :mini_test
+              .new-report-main__container__left__third__mini_test__rate
+                正答率
+                .new-report-main__container__left__third__mini_test__rate__text
+                  = f.select :mini_test_rate, [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100], prompt: "--"
+                  %span %
+          .new-report-main__container__left__fourth
+            = f.text_area :content, class: 'content', placeholder: '本日の内容'
+
+        .new-report-main__container__right
+          .new-report-main__container__right__first
+            宿題
+            .new-report-main__container__right__first
+              = f.text_area :homework
+          .new-report-main__container__right__second
+            次回授業
+            .new-report-main__container__right__second__next-class
+              !=sprintf(f.date_select(:next_class, use_month_numbers: true, date_separator: '%s'),'年','月')+'日'
+      
+      .new-report-main__submit
+        = f.submit '変更', class: 'new-report-main__submit__btn'
+
+  = render "mypages/footer"

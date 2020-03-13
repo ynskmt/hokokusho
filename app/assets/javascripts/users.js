@@ -6,7 +6,7 @@ $(function() {
         <div class="student-user-add student-user-add-btn" data-user-id="${user.id}" data-user-name="${user.last_name}${user.first_name}">追加</div>
       </div>
     `;
-    $("#student-member__select__result").append(html);
+    $("#student-member__search__result").append(html);
   }
 
   function addNoUser() {
@@ -15,7 +15,7 @@ $(function() {
         <p class="student-user__name">ユーザーが見つかりません</p>
       </div>
     `;
-    $("#student-member__select__result").append(html);
+    $("#student-member__search__result").append(html);
   }
   function addDeleteUser(name, id) {
     let html = `
@@ -23,7 +23,7 @@ $(function() {
       <p class="student-user__name">${name}</p>
       <div class="student-user-remove student-user-remove-btn" data-user-id="${id}" data-user-name="${name}">削除</div>
     </div>`;
-    $(".js-add-user").append(html);
+    $("#student-member__select__relsut").append(html);
   }
   function addMember(userId) {
     let html = `<input value="${userId}" name="student[user_ids][]" type="hidden" id="student_user_ids_${userId}" />`;
@@ -38,7 +38,7 @@ $(function() {
       dataType: "json"
     })
       .done(function(users) {
-        $("#student-member__select__result").empty();
+        $("#student-member__search__result").empty();
         if (users.length !== 0) {
           users.forEach(function(user) {
             addUser(user);

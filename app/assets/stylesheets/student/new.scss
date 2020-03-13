@@ -1,32 +1,98 @@
 .student-main {
   padding: 10px;
   &__container {
-    width: 800px;
+    width: 1000px;
     margin: 50px auto;
+    border: 2px double rgb(219, 108, 5);
+    border-radius: 10px;
+    padding: 50px;
+    
+    &__top {
+      font-size: 40px;
+      font-weight: 600;;
+      text-align: center;
+    }
     &__box {
-      &__top {
-        font-size: 30px;
-        text-align: center;
+      margin-top: 40px;
+      display: flex;
+      &__left {
+        width: 50%;
+        .student-form {
+          width: 200px;
+          margin: 0 auto 20px;
+          &__label {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+          &__input {
+            .student-form-box {
+              height: 40px;
+              padding: 5px 10px;
+              border-radius: 5px;
+            }
+            .student-form-btn {
+              height: 40px;
+              width: 100px;
+              display: block;
+              margin: 0 auto;
+            }
+          }
+        }
       }
-      .student-form {
-        width: 200px;
-        margin: 0 auto;
-        &__label {
-          text-align: center;
-        }
-        &__input {
-          .student-form-box {
-            height: 40px;
-          }
-          .student-form-btn {
-            height: 40px;
-            width: 100px;
-            display: block;
-            margin: 0 auto;
-          }
-
-        }
+      &__right {
+        width: 50%;
       }
     }
   }
+}
+
+.student-member-box {
+  &__form {
+    min-height: 80px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  &__label {
+    font-size: 15px;
+    background-color: palevioletred;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto 5px;
+    padding: 3px 5px;
+    border-radius: 10px;
+  }
+}
+
+#student-member-box__select__field {
+  height: 40px;
+  width: 400px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.student-user {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid rgb(115, 224, 224);
+  border-radius: 10px;
+  margin-bottom: 3px;
+}
+
+.student-submit-btn {
+  margin: 20px auto;
+  height: 50px;
+  background: rgb(110, 50, 31);
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 30%;
+  line-height: 50px;
+  font-size: 30px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
 }

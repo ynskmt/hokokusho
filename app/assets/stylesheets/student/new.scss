@@ -1,0 +1,32 @@
+.student-main {
+  padding: 10px;
+  &__container {
+    width: 800px;
+    margin: 50px auto;
+    &__box {
+      &__top {
+        font-size: 30px;
+        text-align: center;
+      }
+      .student-form {
+        width: 200px;
+        margin: 0 auto;
+        &__label {
+          text-align: center;
+        }
+        &__input {
+          .student-form-box {
+            height: 40px;
+          }
+          .student-form-btn {
+            height: 40px;
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+          }
+
+        }
+      }
+    }
+  }
+}

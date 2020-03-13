@@ -1,23 +1,37 @@
 .student-wrapper
-  =form_for @student do |f|
-    = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
+  .student-main
+    =form_for @student do |f|
+      .student-main__container
+        .student-main__container__box
+          .student-main__container__box__top
+            新規生徒作成
+          .student-form
+            .student-form__label
+              = f.label :生徒名
+            .student-form__input
+              = f.text_field :name, class: "student-form-box", placeholder: "生徒名を入力"
+          .student-form
+            .student-form__label
+              = f.label :小学校　中学校　高校
+            .student-form__input
+              = f.collection_select :school_id, School.all , :id, :name, {prompt: '---'}, class: 'student-form-btn'
+          .student-form
+            .student-form__label
+              = f.label :学年
+            .student-form__input
+              = f.collection_select :grade_id, Grade.all , :id, :name, {prompt: '---'}, class: 'student-form-btn'
+          .student-form
+            .student-form__label
+              = f.label :教科
+            .student-form__input
+              = f.collection_select :subject_id, Subject.all , :id, :name, {prompt: '---'}, class: 'student-form-btn'
 
-    .field-label
-      = f.label :school_id
-    .field-input
-      = f.collection_select :school_id, School.all , :id, :name, {prompt: '---'}, class: 'form'
-    .field-label
-      = f.label :grade_id
-    .field-input
-      = f.collection_select :grade_id, Grade.all , :id, :name, {prompt: '---'}, class: 'form'
-    .field-label
-      = f.label :subject_id
-    .field-input
-      = f.collection_select :subject_id, Subject.all , :id, :name, {prompt: '---'}, class: 'form'
-    
-    = f.collection_check_boxes :user_ids, User.all, :id, :last_name do |user|
-      = user.label do
-        = user.object.last_name
-        = user.object.first_name
-        = user.check_box
-    = f.submit "Save", class: "chat-group-form__action-btn"
+
+          .student-member
+            .student-member__list
+              = f.collection_check_boxes :user_ids, User.all, :id, :last_name do |user|
+                = user.label do
+                  = user.object.last_name
+                  = user.object.first_name
+                  = user.check_box
+          = f.submit "作成", class: "student-submit-btn"

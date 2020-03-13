@@ -12,6 +12,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
   def student_params
     params.require(:student).permit(:name, :school_id, :grade_id, :subject_id, user_ids: [] )

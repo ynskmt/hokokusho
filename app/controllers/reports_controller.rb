@@ -34,6 +34,16 @@ class ReportsController < ApplicationController
     end
   end
 
+  def destroy
+    @student = Student.find(params[:student_id])
+    @report = @student.reports.find(params[:id])
+    if @report.destroy
+      redirect_to student_reports_path(@student)
+    else
+      render :index
+    end
+  end
+
   def report_params
     params.require(:report).permit(
       :year,

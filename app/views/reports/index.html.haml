@@ -65,7 +65,7 @@
                 = link_to edit_student_report_path(@student, report) do
                   編集
               .report-main__container__right__second__btn__delete
-                = link_to "#" do
+                = link_to student_report_path(@student, report), method: 'delete' do
                   削除
       
   = render "mypages/footer"

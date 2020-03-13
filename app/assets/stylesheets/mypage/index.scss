@@ -1,7 +1,13 @@
 .mypage-main {
   padding:  0 30px 10px;
-  &__elementary-school ,&__junior-high-school ,&__high-school {
+  &__school {
     min-height: 50px;
+    border-bottom: 2px solid #ddd;
+    .mypage-main-school-name {
+      font-size: 30px;
+      font-weight: 600;
+      text-align: center;
+    }
     .student-container {
       display: flex;
       flex-wrap: wrap;
@@ -10,31 +16,38 @@
         padding: 10px;
         width: 200px;
         height: 100px;
-        background-color: rgb(129, 215, 218);
-        margin-right: 22px;
-        margin-bottom: 20px;
-        border-radius: 50%;
+        margin: 0 15px 20px;
+        border-radius: 3px;
         text-align: center;
+        .student-box__name {
+          font-weight: 600;
+        }
+        .student-box__school {
+          display: flex;
+          justify-content: center;
+          &__grade {
+            margin-right: 10px;
+          }
+        }
+        .student-edit-delete {
+          margin-top: 5px;
+          .icon {
+            margin: 0 5px;
+          }
+        }
       }
     }
-    // .student-container {
-    //   margin-top: 10px;
-    //   display: grid;
-    //   grid-template-columns: repeat(6, 1fr);
-    //   gap: 15px 15px;
-    //   width: 100%;
-    //   &__box {
-    //     margin-right: 20px;
-    //     height: 100px;
-
-    //     z-index: 2;
-    //     background-color: #557df8;
-    //     border-radius: 10px;
-    //     width: 200px;
-    //     height: 60px;
-    //     padding-top: 15px;
-    //     text-align: center;
-    //   }
-    // }
   }
+}
+
+.elementary-school {
+  background-color: pink;
+}
+
+.junior-high-school {
+  background-color: powderblue;
+}
+
+.high-school {
+  background-color: rgb(109, 230, 184);
 }

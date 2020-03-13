@@ -9,43 +9,64 @@
           = student.grade.name
           = student.subject.name
     - else
-      .mypage-main__elementary-school
-        小学生
+      .mypage-main__school
+        .mypage-main-school-name
+          小学生
         .student-container
           - current_user.students.each do |student|
             - if student.school.id == 1
-              .student-container__box
+              .student-container__box.elementary-school
                 = link_to student_reports_path(student) do
                   .student-box__name
                     = student.name
-                  .student-box__school-grade
-                    = "#{student.school.name}#{student.grade.name}年"
-                  .student-box__subject
-                    = student.subject.name      
-      .mypage-main__junior-high-school
-        中学生
+                  .student-box__school
+                    .student-box__school__grade
+                      = "#{student.school.name}#{student.grade.name}年"
+                    .student-box__school__subject
+                      = student.subject.name
+                .student-edit-delete
+                  = link_to edit_student_path(student) do
+                    = icon("far", "edit", class: "icon")
+                  = link_to "#" do
+                    = icon("fas", "trash-alt", class: "icon")
+      .mypage-main__school
+        .mypage-main-school-name
+          中学生
         .student-container
           - current_user.students.each do |student|
             - if student.school.id == 2
-              .student-container__box
+              .student-container__box.junior-high-school
                 = link_to student_reports_path(student) do
                   .student-box__name
                     = student.name
-                  .student-box__school-grade
-                    = "#{student.school.name}#{student.grade.name}年"
-                  .student-box__subject
-                    = student.subject.name
-      .mypage-main__high-school
-        高校生
+                  .student-box__school
+                    .student-box__school__grade
+                      = "#{student.school.name}#{student.grade.name}年"
+                    .student-box__school__subject
+                      = student.subject.name
+                .student-edit-delete
+                  = link_to edit_student_path(student) do
+                    = icon("far", "edit", class: "icon")
+                  = link_to "#" do
+                    = icon("fas", "trash-alt", class: "icon")
+      .mypage-main__school
+        .mypage-main-school-name
+          高校生
         .student-container
           - current_user.students.each do |student|
             - if student.school.id == 3
-              .student-container__box
+              .student-container__box.high-school
                 = link_to student_reports_path(student) do
                   .student-box__name
                     = student.name
-                  .student-box__school-grade
-                    = "#{student.school.name}#{student.grade.name}年"
-                  .student-box__subject
-                    = student.subject.name
+                  .student-box__school
+                    .student-box__school__grade
+                      = "#{student.school.name}#{student.grade.name}年"
+                    .student-box__school__subject
+                      = student.subject.name
+                .student-edit-delete
+                  = link_to edit_student_path(student) do
+                    = icon("far", "edit", class: "icon")
+                  = link_to "#" do
+                    = icon("fas", "trash-alt", class: "icon")
   = render "footer"

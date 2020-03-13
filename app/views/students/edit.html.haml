@@ -1,0 +1,63 @@
+.student-wrapper
+  = render "shared/header-simple"
+  .student-main
+    =form_for @student do |f|
+      .student-main__container
+        .student-main__container__top
+          新規生徒作成
+
+        .student-main__container__box
+          .student-main__container__box__left
+            .student-form
+              .student-form__label
+                = f.label :生徒名
+              .student-form__input
+                = f.text_field :name, class: "student-form-box", placeholder: "生徒名を入力"
+            .student-form
+              .student-form__label
+                = f.label :学校
+              .student-form__input
+                = f.collection_select :school_id, School.all , :id, :name, {prompt: '---'}, class: 'student-form-btn'
+            .student-form
+              .student-form__label
+                = f.label :学年
+              .student-form__input
+                = f.collection_select :grade_id, Grade.all , :id, :name, {prompt: '---'}, class: 'student-form-btn'
+            .student-form
+              .student-form__label
+                = f.label :教科
+              .student-form__input
+                = f.collection_select :subject_id, Subject.all , :id, :name, {prompt: '---'}, class: 'student-form-btn'
+
+          .student-main__container__box__right
+            .student-member-box
+              .student-member-box__form
+                .student-member-box__label
+                  = f.label :【　メンバーを探す　】
+                .student-member-box__select
+                  %input#student-member-box__select__field{:placeholder => "名前で検索", :type => "text"}/
+              
+              .student-member-box__form
+                .student-member-box__label
+                  = f.label :【追加メンバーを選択】
+                #student-member__search__result
+              
+              .student-member-box__form
+                #student-member__select__relsut
+                  .student-member-box__label
+                    = f.label :【　メンバー一覧　】
+                  .student-user
+                    %input{name: "student[user_ids][]", type: "hidden", value: current_user.id}
+                    %p.student-user__name= current_user.last_name + current_user.first_name
+
+
+                  - @student.users.each do |user|
+                    - if current_user.last_name != user.last_name
+                      .student-user
+                        %input{name: "student[user_ids][]", type: "hidden", value: user.id}
+                        %p.student-user__name
+                          = user.last_name + user.first_name
+                        %a.student-user-remove.student-user-remove-btn
+                          削除
+
+            = f.submit "作成", class: "student-submit-btn"

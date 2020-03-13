@@ -25,7 +25,7 @@
                     .student-box__school__subject
                       = student.subject.name
                 .student-edit-delete
-                  = link_to "#" do
+                  = link_to edit_student_path(student) do
                     = icon("far", "edit", class: "icon")
                   = link_to "#" do
                     = icon("fas", "trash-alt", class: "icon")
@@ -45,7 +45,7 @@
                     .student-box__school__subject
                       = student.subject.name
                 .student-edit-delete
-                  = link_to "#" do
+                  = link_to edit_student_path(student) do
                     = icon("far", "edit", class: "icon")
                   = link_to "#" do
                     = icon("fas", "trash-alt", class: "icon")
@@ -65,7 +65,7 @@
                     .student-box__school__subject
                       = student.subject.name
                 .student-edit-delete
-                  = link_to "#" do
+                  = link_to edit_student_path(student) do
                     = icon("far", "edit", class: "icon")
                   = link_to "#" do
                     = icon("fas", "trash-alt", class: "icon")

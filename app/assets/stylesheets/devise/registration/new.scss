@@ -1,0 +1,80 @@
+.registration-wrapper {
+  background-image: image-url("juku4.jpeg");
+  background-size: cover;
+  height: 800px;
+}
+
+.registration-main {
+  &__container {
+    display: flex;
+    padding: 40px;
+    &__left {
+      width: 40%;
+      margin-right: 40px;
+      &__title {
+        color: rgb(221, 89, 13);
+        font-size: 60px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 60px;
+      }
+      &__image {
+        text-align: center;
+        margin-top: 60px;
+        &__first {
+          display: flex;
+          justify-content: space-around;
+          &__right {
+          }
+          &__left {
+
+          }
+        }
+      }
+
+    }
+    &__right {
+      width: 60%;
+      &__box {
+        text-align: center;
+        &__form {
+          height: 100px;
+          margin-bottom: 10px;
+          &__label {
+            font-size: 25px;
+          }
+          &__input {
+            margin-top: 5px;
+            .registration-input {
+              height: 40px;
+              width: 350px;
+              padding: 5px 10px;
+            }
+            .registration-select {
+              height: 40px;
+              width: 100px;
+              padding: 10px;
+            }
+          }
+        }
+        &__submit {
+          margin-top: 10px;
+          .registration-btn {
+            padding: 10px;
+            margin: 0 auto;
+            background: #6495ed;
+            border: 1px solid #6495ed;
+            color: #fff;
+            display: block;
+            line-height: 48px;
+            font-size: 20px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: center;
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}

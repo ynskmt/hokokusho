@@ -8,7 +8,7 @@
     padding: 10px;
     margin-bottom: 20px;
     &__left {
-      width: 75%;
+      width: 65%;
       margin-right: 10px;
       &__first {
         padding: 5px 10px;
@@ -110,7 +110,8 @@
 
     }
     &__right {
-      width: 25%;
+      width: 20%;
+      margin-right: 10px;
       &__first {
         border: 1px solid #eee;
         height: 80%;
@@ -132,11 +133,11 @@
         &__next-class {
           margin-right: 30px;
           &__name {
-            font-size: 20px;
+            font-size: 16px;
             margin-bottom: 3px;
           }
           &__date {
-            
+            font-size: 14px;
           }
         }
         &__btn {
@@ -152,14 +153,63 @@
               border: 1px solid transparent;
               cursor: pointer;
               text-align: center;
-              width: 80px;
-              margin-right: 20px;
+              width: 60px;
+              margin-right: 10px;
             }
           }
           &__delete {
             font-size: 20px;
             height: 30px;
           }
+        }
+      }
+    }
+  }
+}
+
+.comment-wrapper {
+  width: 15%;
+  border: 1px solid #eee;
+  .comment-main {
+    &__top {
+      margin-bottom: 15px;
+      &__title {
+        text-align: center;
+      }
+      &__form {
+        &__text {
+          .comment-form {
+            min-height: 100px;
+            width: 200px;
+            margin: 5px;
+            padding: 5px;
+          }
+        }
+        &__submit {
+          .comment-submit-btn {
+            background: darkblue;
+            border: 1px solid darkblue;
+            color: #fff;
+            display: block;
+            line-height: 25px;
+            font-size: 15px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: center;
+            width: 100px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    &__bottom {
+      &__title {
+        text-align: center;
+      }
+      &__box {
+        padding: 10px;
+        &__text {
+          font-size: 14px;
         }
       }
     }

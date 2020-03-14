@@ -2,12 +2,23 @@
   = render "header"
   .mypage-main
     - if current_user.user_status_id == "1"
-      - current_user.students.each do |student|
-        = link_to student_reports_path(student) do
-          = student.name
-          = student.school.name
-          = student.grade.name
-          = student.subject.name
+      .mypage-main__school
+        .student-container
+          - current_user.students.each do |student|
+            .student-container__box.myself
+              = link_to student_reports_path(student) do
+                .student-box__name
+                  = student.name
+                .student-box__school
+                  .student-box__school__grade
+                    = "#{student.school.name}#{student.grade.name}年"
+                  .student-box__school__subject
+                    = student.subject.name
+              .student-edit-delete
+                = link_to edit_student_path(student) do
+                  = icon("far", "edit", class: "icon")
+                = link_to student_path(student), method: 'delete', data: { confirm: '削除しますか？' } do
+                  = icon("fas", "trash-alt", class: "icon")
     - else
       .mypage-main__school
         .mypage-main-school-name

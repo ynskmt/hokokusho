@@ -67,5 +67,22 @@
               .report-main__container__right__second__btn__delete
                 = link_to student_report_path(@student, report), method: 'delete' do
                   削除
-      
+    
+        .comment-wrapper
+          .comment-main
+            .comment-main__top
+              .comment-main__top__title
+                コメント
+              .comment-main__top__form
+                = form_for [@student, report, @comment] do |f|
+                  = f.text_area :text, class: 'comment-form'
+                  = f.submit 'コメントする'
+            .comment-main__bottom
+              .comment-main__bottom__title
+                コメント一覧
+              .comment-main__bottom__text
+                - report.comments.each do |comment|
+                  = comment.text
+              
+
   = render "mypages/footer"

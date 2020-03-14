@@ -23,6 +23,7 @@
           height: 50px;
           &__ymd {
             line-height: 50px;
+            background-color: #eee;
           }
         }
         &__teacher {
@@ -31,7 +32,8 @@
           &__name {
             display: inline-block;
             line-height: 50px;
- 
+            font-size: 20px;
+            background-color: #eee;
           }
         }
         &__confirmation{
@@ -39,7 +41,8 @@
           &__name {
             display: inline-block;
             line-height: 50px;
-  
+            font-size: 20px;
+            background-color: #eee;
           }
         }
       }
@@ -54,6 +57,7 @@
         }
         &__unit-field {
           width: 90%;
+          background-color: #eee;
   
         }
       }
@@ -71,6 +75,7 @@
           margin-right: 50px;
           &__text {
             margin-left: 10px;
+            background-color: #eee;
           }
         }
         &__mini_test {
@@ -82,12 +87,14 @@
             margin-right: 20px;
             &__text {
               margin-left: 10px;
+              background-color: #eee;
             }
           }
           &__rate {
             display: flex;
             &__text {
               margin-left: 10px;
+              background-color: #eee;
             }
           }
         }

@@ -25,6 +25,15 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destroy
+    @student = Student.find(params[:id])
+    if @student.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
   def student_params
     params.require(:student).permit(:name, :school_id, :grade_id, :subject_id, user_ids: [] )

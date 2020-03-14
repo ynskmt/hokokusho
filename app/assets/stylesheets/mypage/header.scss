@@ -1,14 +1,18 @@
 .header {
   height: 150px;
   &__logo {
-    padding: 10px;
+    height: 100px;
+    padding: 20px;
     text-align: center;
-    background-color: #eee;
+    background-color: #fff;
   }
   &__bottom {
+    height: 50px;
     display: flex;
     padding: 10px 0 10px;
-    background-color: #f0e68e;
+    background-color: rgb(6, 6, 116);
+    color: #fff;
+    font-size: 20px;
     &__user {
       width: 33%;
       text-align: center;
@@ -16,10 +20,16 @@
     &__student {
       width: 33%;
       text-align: center;
+      a {
+        color: #fff;
+      }
     }
     &__logout {
       width: 33%;
       text-align: center;
+      a {
+        color: #fff;
+      }
     }
     
   }

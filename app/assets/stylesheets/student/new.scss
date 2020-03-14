@@ -1,4 +1,6 @@
 .student-main {
+  background-image: image-url("sagamihara2.jpeg");
+  background-size: cover;
   padding: 10px;
   &__container {
     width: 1000px;
@@ -21,6 +23,8 @@
           width: 200px;
           margin: 0 auto 20px;
           &__label {
+            color: #fff;
+            background-color: rgb(12, 12, 136);
             font-size: 20px;
             text-align: center;
             margin-bottom: 10px;
@@ -76,6 +80,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  background-color: #fff;
   border: 1px solid rgb(115, 224, 224);
   border-radius: 10px;
   margin-bottom: 3px;

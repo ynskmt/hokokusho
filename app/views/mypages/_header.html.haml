@@ -5,6 +5,8 @@
   .header__bottom
     .header__bottom__user
       = current_user.last_name + current_user.first_name + "でログイン中"
+      = link_to edit_user_registration_path(current_user.id) do
+        = icon("far", "edit", class: "icon")
     - if current_user.user_status_id == "3"
       .header__bottom__student
         = link_to new_student_path do

@@ -7,7 +7,7 @@
 .registration-main {
   &__container {
     display: flex;
-    padding: 40px;
+    padding: 40px 40px 0;
     &__left {
       width: 40%;
       margin-right: 40px;
@@ -24,29 +24,44 @@
         &__first {
           display: flex;
           justify-content: space-around;
-          &__right {
-          }
-          &__left {
-
-          }
         }
       }
 
+      &__back {
+        a {
+          padding: 10px;
+          margin: 10px auto;
+          background: #64ed9d;
+          border: 1px solid #64ed9d;
+          color: #fff;
+          display: block;
+          line-height: 48px;
+          font-size: 20px;
+          border: 1px solid transparent;
+          cursor: pointer;
+          text-align: center;
+          width: 100px;
+        }
+      }
+
+      
+
     }
     &__right {
+      position: relative;
       width: 60%;
       &__box {
         text-align: center;
         &__form {
-          height: 100px;
-          margin-bottom: 10px;
+          height: 80px;
+          margin-bottom: 5px;
           &__label {
-            font-size: 25px;
+            font-size: 20px;
           }
           &__input {
             margin-top: 5px;
             .registration-input {
-              height: 40px;
+              height: 35px;
               width: 350px;
               padding: 5px 10px;
             }
@@ -57,21 +72,53 @@
             }
           }
         }
-        &__submit {
-          margin-top: 10px;
-          .registration-btn {
-            padding: 10px;
-            margin: 0 auto;
-            background: #6495ed;
-            border: 1px solid #6495ed;
-            color: #fff;
-            display: block;
-            line-height: 48px;
-            font-size: 20px;
-            border: 1px solid transparent;
-            cursor: pointer;
-            text-align: center;
-            width: 150px;
+        &__btns {
+          display: flex;
+          margin-left: 230px;
+          &__submit {
+            margin-top: 10px;
+            .registration-btn {
+              padding: 10px;
+              margin: 0 auto;
+              background: #6495ed;
+              border: 1px solid #6495ed;
+              color: #fff;
+              display: block;
+              line-height: 48px;
+              font-size: 20px;
+              border: 1px solid transparent;
+              cursor: pointer;
+              text-align: center;
+              width: 150px;
+            }
+          }
+          &__delete {
+            position: absolute;
+            bottom: 35px;
+            right: 230px;
+            margin-top: 10px;
+            margin-left: 10px;
+
+            &__title {
+              font-size: 20px;
+              text-align: center;
+            }
+            &__link {
+              input {
+                padding: 10px;
+                margin: 0 auto;
+                background: #6495ed;
+                border: 1px solid #6495ed;
+                color: #fff;
+                display: block;
+                line-height: 48px;
+                font-size: 20px;
+                border: 1px solid transparent;
+                cursor: pointer;
+                text-align: center;
+                width: 150px;
+              }
+            }
           }
         }
       }

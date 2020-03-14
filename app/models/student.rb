@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+  has_many :comments
   has_many :reports, dependent: :destroy
   has_many :student_users, dependent: :destroy
   has_many :users, through: :student_users

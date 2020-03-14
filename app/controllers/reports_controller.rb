@@ -2,6 +2,7 @@ class ReportsController < ApplicationController
   def index
     @student = Student.find(params[:student_id])
     @reports = @student.reports.includes(:user).order("created_at DESC")
+    @comment = Comment.new
   end
 
   def new

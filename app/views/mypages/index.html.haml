@@ -27,7 +27,7 @@
                 .student-edit-delete
                   = link_to edit_student_path(student) do
                     = icon("far", "edit", class: "icon")
-                  = link_to "#" do
+                  = link_to student_path(student), method: 'delete' do
                     = icon("fas", "trash-alt", class: "icon")
       .mypage-main__school
         .mypage-main-school-name
@@ -47,7 +47,7 @@
                 .student-edit-delete
                   = link_to edit_student_path(student) do
                     = icon("far", "edit", class: "icon")
-                  = link_to "#" do
+                  = link_to student_path(student), method: 'delete' do
                     = icon("fas", "trash-alt", class: "icon")
       .mypage-main__school
         .mypage-main-school-name
@@ -67,6 +67,6 @@
                 .student-edit-delete
                   = link_to edit_student_path(student) do
                     = icon("far", "edit", class: "icon")
-                  = link_to "#" do
+                  = link_to student_path(student), method: 'delete' do
                     = icon("fas", "trash-alt", class: "icon")
   = render "footer"

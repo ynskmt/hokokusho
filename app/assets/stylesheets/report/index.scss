@@ -1,6 +1,6 @@
 .report-main {
-  background-color: rgb(104, 49, 8);
-  padding: 10px 20px;
+  background-color: #eee;
+  padding: 20px;
   &__container {
     border: 1px double #000;
     display: flex;
@@ -22,8 +22,7 @@
           margin-right: 40px;
           height: 50px;
           &__ymd {
-            line-height: 50px;
-            background-color: #eee;
+            @include report-background;
           }
         }
         &__teacher {
@@ -31,18 +30,14 @@
           height: 50px;
           &__name {
             display: inline-block;
-            line-height: 50px;
-            font-size: 20px;
-            background-color: #eee;
+            @include report-background;
           }
         }
         &__confirmation{
           height: 50px;
           &__name {
             display: inline-block;
-            line-height: 50px;
-            font-size: 20px;
-            background-color: #eee;
+            @include report-background;
           }
         }
       }
@@ -54,11 +49,12 @@
         display: flex;
         &__unit-name {
           width: 10%;
+          line-height: 30px;
         }
         &__unit-field {
-          width: 90%;
           background-color: #eee;
-  
+          @include report-background;
+          line-height: 30px;
         }
       }
       &__third {
@@ -75,7 +71,7 @@
           margin-right: 50px;
           &__text {
             margin-left: 10px;
-            background-color: #eee;
+            @include report-background;
           }
         }
         &__mini_test {
@@ -87,14 +83,14 @@
             margin-right: 20px;
             &__text {
               margin-left: 10px;
-              background-color: #eee;
+              @include report-background;
             }
           }
           &__rate {
             display: flex;
             &__text {
               margin-left: 10px;
-              background-color: #eee;
+              @include report-background;
             }
           }
         }
@@ -111,6 +107,7 @@
         }
         &__content {
           min-height: 200px;
+          font-size: 18px;
         }
   
       }

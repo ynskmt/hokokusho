@@ -46,7 +46,7 @@
                 = f.label :"生徒　保護者　講師"
               .registration-main__container__right__box__form__input
                 = f.collection_select :user_status_id, UserStatus.all , :id, :name, {prompt: '---'}, class: 'registration-select'
-            .registration-main__container__right__box__submit
+            .registration-main__container__right__box__btns__submit
               = f.submit "新規登録", class: 'registration-btn'
 
 

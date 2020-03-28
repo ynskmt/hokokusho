@@ -46,7 +46,7 @@
             .report-main__container__left__fourth__name
               本日の内容
             .report-main__container__left__fourth__content
-              = report.content
+              = simple_format(report.content)
 
         .report-main__container__right
           .report-main__container__right__first
@@ -85,7 +85,7 @@
               .comment-main__bottom__box
                 - report.comments.each do |comment|
                   .comment-main__bottom__box__text
-                    = comment.text
+                    = simple_format(comment.text)
                     = link_to student_report_comment_path(@student, report, comment), method: 'delete', data: { confirm: '削除しますか？' } do
                       = icon("fas", "trash-alt", class: "icon")
               

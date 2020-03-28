@@ -14,9 +14,9 @@ class ReportsController < ApplicationController
     @student = Student.find(params[:student_id])
     @report = @student.reports.new(report_params)
     if @report.save
-      redirect_to student_reports_path(@student)
+      redirect_to root_path
     else
-      render :new
+      render :index
     end
   end
 

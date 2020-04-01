@@ -49,9 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: hokokusho_production
-  username: hokokusho
-  password: <%= ENV['HOKOKUSHO_DATABASE_PASSWORD'] %>
   adapter: postgresql
   encoding: unicode
   pool: 5

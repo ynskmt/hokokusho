@@ -1,6 +1,22 @@
-# README
+# アプリ名
+## hokokusho
 
-# hokokusho DB設計
+# 概要
+個別指導塾において授業毎に講師が保護者に向けて学習内容や塾での様子などを伝えるツール
+
+# 本番環境
+## Heroku
+https://hokokusho.herokuapp.com/
+
+# 制作背景
+- 現在の報告書は複写式の紙媒体であり手間が多いためそれを改善する。
+- 生徒が持参し忘れることがあり、続きに書くことができない状態を改善する。
+
+# DEMO
+新しい報告書を作るページ
+<img width="1435" alt="report_new" src="https://user-images.githubusercontent.com/57008698/78261694-7fbf0700-753a-11ea-805a-b7f938f6f133.png">
+
+# DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|

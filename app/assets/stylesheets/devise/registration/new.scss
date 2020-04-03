@@ -13,33 +13,27 @@
       margin-right: 40px;
       &__title {
         color: rgb(221, 89, 13);
-        font-size: 60px;
+        font-size: 80px;
         font-weight: 600;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 100px;
+        line-height: 300px;
+        height: 300px;
       }
-      &__image {
-        text-align: center;
-        margin-top: 60px;
-        &__first {
-          display: flex;
-          justify-content: space-around;
-        }
-      }
-      &__back {
+      &__back, &__session {
         a {
           padding: 10px;
-          margin: 10px auto;
-          background: #64ed9d;
+          margin: 100px auto;
+          background: #ecf007;
           border: 1px solid #64ed9d;
-          color: #fff;
+          color: #111;
           display: block;
           line-height: 48px;
           font-size: 20px;
           border: 1px solid transparent;
           cursor: pointer;
           text-align: center;
-          width: 100px;
+          width: 200px;
         }
       }
     }
@@ -90,7 +84,7 @@
           }
           &__delete {
             position: absolute;
-            bottom: 35px;
+            bottom: 0;
             right: 230px;
             margin-top: 10px;
             margin-left: 10px;

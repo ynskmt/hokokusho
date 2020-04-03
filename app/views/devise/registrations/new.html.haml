@@ -4,14 +4,10 @@
       .registration-main__container__left
         .registration-main__container__left__title
           新規登録
-        .registration-main__container__left__image
-          .registration-main__container__left__image__first
-            .registration-main__container__left__image__first__right
-              = image_tag("registration-page1", width: "250px")
-            .registration-main__container__left__image__first__left
-              = image_tag("registration-page2", width: "250px")
-          .registration-main__container__left__image__second
-            = image_tag("sansyamendan_boy", width: "300px")
+
+        .registration-main__container__left__session
+          = link_to "ログインページへ", new_user_session_path
+          
       .registration-main__container__right
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           .registration-main__container__right__box

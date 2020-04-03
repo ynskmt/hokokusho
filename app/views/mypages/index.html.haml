@@ -1,7 +1,7 @@
 .mypage-wrapper
   = render "header"
   .mypage-main
-    - if current_user.user_status_id == "1"
+    - if current_user.user_status_id == "1" || current_user.user_status_id == "2" 
       .mypage-main__school
         .student-container
           - current_user.students.each do |student|

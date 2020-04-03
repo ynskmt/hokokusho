@@ -1,18 +1,18 @@
 class CommentsController < ApplicationController
   def create
-    if Comment.create(comment_params)
+    if (current_user.user_status_id == "2") && Comment.create(comment_params)
       redirect_to student_reports_path
     else
-      render controller: :reports, action: :index
+      redirect_to student_reports_path
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.destroy
+    if (@comment.user_id == current_user.id) && @comment.destroy
       redirect_to student_reports_path
     else
-      render controller: :reports, action: :index
+      redirect_to student_reports_path
     end
   end
 

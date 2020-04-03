@@ -1,6 +1,9 @@
 class StudentsController < ApplicationController
+  before_action :set_student, only: [:edit, :update, :destroy]
+
   def new
     @student = Student.new
+    redirect_to root_path unless current_user.user_status_id == "3"
   end
 
   def create
@@ -13,11 +16,10 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Student.find(params[:id])
+    redirect_to root_path unless @student.student_users[0].user_id == current_user.id
   end
 
   def update
-    @student = Student.find(params[:id])
     if @student.update(student_params)
       redirect_to root_path
     else
@@ -26,8 +28,7 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    @student = Student.find(params[:id])
-    if @student.destroy
+    if (@student.student_users[0].user_id == current_user.id) && @student.destroy
       redirect_to root_path
     else
       redirect_to root_path
@@ -37,5 +38,9 @@ class StudentsController < ApplicationController
   private
   def student_params
     params.require(:student).permit(:name, :school_id, :grade_id, :subject_id, user_ids: [] )
+  end
+
+  def set_student
+    @student = Student.find(params[:id])
   end
 end

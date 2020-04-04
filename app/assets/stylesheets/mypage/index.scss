@@ -20,6 +20,9 @@
       &:first-child {
         margin-top: 0;
       }
+      &:hover {
+        transform: scale(1.01, 1.01);
+      }
       a {
         display: flex;
         width: 100%;
@@ -61,6 +64,9 @@
       margin-right: 10px;
       &:first-child {
         margin-top: 0;
+      }
+      &:hover {
+        transform: scale(1.01, 1.01);
       }
       a {
         display: flex;
@@ -145,12 +151,21 @@
 
 .elementary-school {
   background-color: pink;
+  &:hover {
+    transform: translateY(-0.1875em);
+  }
 }
 
 .junior-high-school {
   background-color: powderblue;
+  &:hover {
+    transform: translateY(-0.1875em);
+  }
 }
 
 .high-school {
   background-color: rgb(109, 230, 184);
+  &:hover {
+    transform: translateY(-0.1875em);
+  }
 }

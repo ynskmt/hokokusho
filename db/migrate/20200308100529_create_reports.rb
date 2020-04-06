@@ -10,7 +10,7 @@ class CreateReports < ActiveRecord::Migration[5.2]
       t.integer     :mini_test_rate
       t.text        :content,       null: false
       t.string      :teacher,       null: false
-      t.string      :confirmation,  null: false
+      t.string      :confirmation
       t.text        :homework,      null: false
       t.date        :next_class,    null: false
       t.references  :student,       foreign_key: true

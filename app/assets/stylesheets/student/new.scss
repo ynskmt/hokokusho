@@ -105,3 +105,15 @@
 .student-main-edit {
   background-image: image-url("sagamihara1.jpeg");
 }
+
+.student__main__errors {
+  text-align: center;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: 10px;
+  h2 {
+    font-size: 18px;
+  }
+}

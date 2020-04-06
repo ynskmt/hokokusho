@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_050519) do
     t.integer "mini_test_rate"
     t.text "content", null: false
     t.string "teacher", null: false
-    t.string "confirmation", null: false
+    t.string "confirmation"
     t.text "homework", null: false
     t.date "next_class", null: false
     t.bigint "student_id"
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(version: 2020_03_14_050519) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
     t.string "last_name", null: false
+    t.string "first_name", null: false
     t.string "user_status_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

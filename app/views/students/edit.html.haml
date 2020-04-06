@@ -2,6 +2,12 @@
   = render "shared/header-simple"
   .student-main.student-main-edit
     =form_for @student do |f|
+      - if @student.errors.any?
+        .student__main__errors
+          %h2= "#{@student.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @student.errors.full_messages.each do |message|
+              %li= message
       .student-main__container
         .student-main__container__top
           生徒編集

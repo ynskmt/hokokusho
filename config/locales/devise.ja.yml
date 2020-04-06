@@ -1,4 +1,9 @@
 ja:
+  attributes:
+    name: 生徒名
+    school_id: 学校
+    grade_id: 学年
+    subject_id: 教科
   activerecord:
     attributes:
       user:

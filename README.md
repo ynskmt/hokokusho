@@ -14,7 +14,9 @@
 
 # DEMO
 - 新しい報告書を作るページ
-<img width="1435" alt="report_new" src="https://user-images.githubusercontent.com/57008698/78261694-7fbf0700-753a-11ea-805a-b7f938f6f133.png">
+<!-- <img width="1435" alt="report_new" src="https://user-images.githubusercontent.com/57008698/78261694-7fbf0700-753a-11ea-805a-b7f938f6f133.png"> -->
+![create_hokokusho_demo](https://user-images.githubusercontent.com/57008698/79242868-cfdd8800-7eaf-11ea-9965-2c464de3e28c.gif)
+
 
 # DB設計
 ## usersテーブル

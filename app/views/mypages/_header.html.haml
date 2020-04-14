@@ -10,7 +10,7 @@
     - if current_user.user_status_id == "3"
       .header__bottom__student
         = link_to new_student_path do
-          新規報告書作成
+          新規生徒作成
     .header__bottom__logout
       = link_to destroy_user_session_path, method: :delete do
         ログアウト

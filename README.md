@@ -32,7 +32,7 @@
 - 報告書に対するコメントは保護者のみ記入可能
 
 # DEMO
-- 授業毎に報告書作成
+- 授業毎に報告書を作成
   - 今回の授業で実施した内容や宿題などを記入する
 ![create_hokokusho_demo](https://user-images.githubusercontent.com/57008698/79242868-cfdd8800-7eaf-11ea-9965-2c464de3e28c.gif)
 

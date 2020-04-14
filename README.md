@@ -32,8 +32,14 @@
 - 報告書に対するコメントは保護者のみ記入可能
 
 # DEMO
-- 新しい報告書を作るページ
+- 授業毎に報告書作成
+  - 今回の授業で実施した内容や宿題などを記入する
 ![create_hokokusho_demo](https://user-images.githubusercontent.com/57008698/79242868-cfdd8800-7eaf-11ea-9965-2c464de3e28c.gif)
+
+- 新しく担当する生徒の報告書を作成
+  - 保護者もメンバーに入れ、閲覧できるようにする
+![create_new-student-hokokusho_demo](https://user-images.githubusercontent.com/57008698/79251412-108ece80-7ebb-11ea-820a-f39ffe5f3e36.gif)
+
 
 
 # DB設計
